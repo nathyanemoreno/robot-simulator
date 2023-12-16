@@ -9,11 +9,6 @@ from shapely.geometry import Polygon
 
 class Robot:
     def __init__(self, environment: Environment, vision_radius, initial_target=None):
-        # self.map = environment.state
-        # _, self.start_point, self.size = environment.find_red_square(self.map)
-        # self.x = self.start_point[0]
-        # self.y = self.start_point[1]
-
         self.vision_radius = vision_radius * 30  # Square Grids
         # self.vision_radius = vision_radius * environment.grid_square_size# Square Grids
         self.environment = environment

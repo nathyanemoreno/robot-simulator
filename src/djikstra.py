@@ -7,7 +7,6 @@ import networkx as nx
 from shapely.geometry import Point
 
 import networkx as nx
-from shapely.geometry import Point
 from shapely import affinity
 
 
@@ -124,50 +123,6 @@ def plot_map_and_route(polygon, start_point, end_point, path, avoid_points=None,
     plt.legend()
     plt.grid(True)
     plt.show()
-
-# def get_grid_points_around_point(x, y, radius, grid_resolution=20):
-#     step = 1.0 / grid_resolution  # Step size between grid points
-#     grid_points = []
-
-#     for i in range(-grid_resolution, grid_resolution + 1):
-#         for j in range(-grid_resolution, grid_resolution + 1):
-#             grid_x = x + i * step
-#             grid_y = y + j * step
-
-#             # Check if the grid point is within the specified radius
-#             distance = ((grid_x - x) ** 2 + (grid_y - y) ** 2) ** 0.5
-#             if distance <= radius:
-#                 grid_points.append((grid_x, grid_y))
-
-#     return grid_points
-
-
-# def get_points_in_radius(center_point, radius, grid_resolution):
-#     points_in_radius = []
-    
-#     cx, cy = center_point
-    
-#     xmin = cx - radius
-#     xmax = cx + radius
-#     ymin = cy - radius
-#     ymax = cy + radius
-    
-#     x0 = np.ceil(xmin / grid_resolution) * grid_resolution
-#     y0 = np.ceil(ymin / grid_resolution) * grid_resolution
-    
-#     # Frist point inside the grid
-#     origin = (x0, y0)
-
-#     # Copy origin
-#     current_point = (origin[0], origin[1])
-    
-#     while current_point[1] <= ymax:
-#         while current_point[0] <= xmax:
-#             points_in_radius.append(current_point)
-#             current_point = (current_point[0] + grid_resolution, current_point[1])
-#         current_point = (x0, current_point[1] + grid_resolution)
-            
-#     return points_in_radius
 
 
 # Example usage with your provided polygon

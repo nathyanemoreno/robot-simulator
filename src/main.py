@@ -41,7 +41,7 @@ if __name__ == "__main__":
         is_ready = input("Ready? ")
         is_ready = is_ready == ""
 
-    robot = Robot(environment, 3, (600, 170))
+    robot = Robot(environment, 3, (600, 300))
 
     robot_center, _, _ = robot.get_surrounds()
 
@@ -59,12 +59,7 @@ if __name__ == "__main__":
 
     can_move = True
     while True:
-        # image = environment.read_screen()
-        # # robot.environment
-        # robot_center, final_spot, obstacles = environment.get_environment(image)
-
         try:
-            # while robot_center == ():
             robot_center, final_spot, obstacles = robot.get_surrounds()
             # print(f"Obstacles centers: {obstacles}")
 
@@ -99,7 +94,7 @@ if __name__ == "__main__":
 
                         try:
                             path = robot.get_path(
-                                robot_center, (600, 170), new_obstacles)
+                                robot_center, (600, 300), new_obstacles)
                         except:
                             environment.release_key(Keys.ARROW_LEFT)
                             environment.release_key(Keys.ARROW_RIGHT)
@@ -162,10 +157,6 @@ if __name__ == "__main__":
                     environment.release_key(Keys.ARROW_DOWN)
                     environment.press_arrow_key(
                         Keys.ARROW_DOWN if dy < 0 else Keys.ARROW_UP)
-                # else:
-                #     # Reset the move along path
-                #     target = None
-                #     target_index = 0
 
             # time.sleep(0.01)
         except:
